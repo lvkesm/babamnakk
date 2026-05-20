@@ -152,7 +152,7 @@ body{
 .bubble{
   padding:12px 14px;
   border-radius:var(--radius-lg);
-  font-size:14px;
+  font-size:12px;
   line-height:1.5;
   animation:fadeIn .3s ease;
   word-break:break-word;
