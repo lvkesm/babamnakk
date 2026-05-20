@@ -116,6 +116,7 @@ body{
   flex-direction:column;
   gap:12px;
   scroll-behavior:smooth;
+  padding-bottom: 80px;
 }
 
 .message{
