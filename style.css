@@ -24,7 +24,8 @@ body{
   background:
     radial-gradient(circle at top, #3b1630 0, #120710 45%, #050308 100%);
   color:var(--text);
-  min-height:100vh;
+  min-height:100dvh;
+  height:100dvh;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -194,6 +195,9 @@ body{
   background:
     radial-gradient(circle at bottom,
     rgba(255,127,191,.12), transparent);
+  position:sticky;
+  bottom:0;
+  z-index:50;
 }
 
 .input-wrapper{
