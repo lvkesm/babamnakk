@@ -14,7 +14,7 @@ function randomName(){
 
 const gifts = [
 {
-  hint:`${randomName()}, az első célpont ott rejtőzik, ahol néha túl sokáig maradsz reggel 😴💖`,
+  hint:`${randomName()}, ott keresd, ahol reggelente a legnehezebb felkelni… mert nem vagyok melletted.`,
   image:"kepek/1.png"
 },
 {
@@ -22,11 +22,11 @@ const gifts = [
   image:"kepek/2.png"
 },
 {
-  hint:`${randomName()}, húzd ki a megfelelő helyet, és lehet hogy a szerelem is veled csúszik 😏💞`,
+  hint:`${randomName()}, húzd ki a megfelelő helyet, ahogy énis kihúzom időbe😜`,
   image:"kepek/3.png"
 },
 {
-  hint:`${randomName()}, nézz egy kicsit magasabbra, mint szoktál 📚💖`,
+  hint:`${randomName()}, nézz oda, ahol minden nap látod, milyen gyönyörű vagy — még akkor is, amikor te nem veszed észre.`,
   image:"kepek/4.png"
 },
 {
@@ -143,11 +143,11 @@ function sendMessage(){
 
   input.value = "";
 
-  if(text.includes("tipp")){
+  if(text.includes("tipp") || text.includes("igen")){
 
     thinking(() => {
 
-      createMessage(gifts[currentGift].hint + "\nSegítségért írd be:\n - kép");
+      createMessage(gifts[currentGift].hint + "\nSegítségért írd be:\n - kép\nVagy ha megtaláltad:\n - megvan");
 
     });
 
@@ -178,7 +178,7 @@ function sendMessage(){
     thinking(() => {
 
       createMessage(
-        "Megtaláltál 1 ajándékot!\nÜgyes vagy, " + randomName()
+        "Ügyes vagy, " + randomName()
       );
 
       currentGift++;
@@ -188,7 +188,7 @@ function sendMessage(){
         setTimeout(() => {
 
           createMessage(
-            "Jöhet a következő ajándék?\nSegítségért írd be:\n - tipp"
+            "Jöhet a következő ajándék?"
           );
 
         }, 1200);
@@ -201,6 +201,7 @@ function sendMessage(){
           createMessage(
             "Megtaláltad az összes ajándékot! 💖\nNézd meg az e-mailjeidet 😉"
           );
+
 
           // EmailJS automatikus futtatás
           emailjs.send("service_8uk3dwk","template_hj7viip",{
