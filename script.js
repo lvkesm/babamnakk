@@ -1,3 +1,22 @@
+// --- MOBIL FIXEK ---
+// Ne zoomoljon be input fókuszkor
+document.addEventListener("touchstart", () => {
+    document.body.style.zoom = "1";
+}, { passive: true });
+
+// Küldés után visszaállítjuk a zoomot
+function resetZoom() {
+    document.body.style.zoom = "1";
+    document.documentElement.style.zoom = "1";
+}
+
+// Billentyűzet felugrásakor ne csússzon el az app
+window.addEventListener("resize", () => {
+    document.querySelector(".app").style.height = window.innerHeight + "px";
+});
+
+
+// --- EREDETI KÓD + MOBIL FIXEK ---
 const names = [
   "Kicsim💖",
   "Szerelmem💗",
@@ -143,6 +162,12 @@ function sendMessage(){
 
   input.value = "";
 
+  // --- ZOOM RESET KÜLDÉS UTÁN ---
+  setTimeout(() => {
+    input.blur();
+    resetZoom();
+  }, 150);
+
   if(text.includes("tipp") || text.includes("igen")){
 
     thinking(() => {
@@ -195,15 +220,12 @@ function sendMessage(){
 
       } else {
 
-        // 🔥 AUTOMATIKUS VÉGÜZENET + EMAIL KÜLDÉS
         setTimeout(() => {
 
           createMessage(
             "Megtaláltad az összes ajándékot! 💖\nNézd meg az e-mailjeidet 😉"
           );
 
-
-          // EmailJS automatikus futtatás
           emailjs.send("service_8uk3dwk","template_hj7viip",{
           name: "asd",
           message: "asd",
