@@ -211,7 +211,7 @@ body{
   border:none;
   outline:none;
   color:var(--text);
-  font-size:14px;
+  font-size:16px;
 }
 
 .input-wrapper input::placeholder{
@@ -260,10 +260,18 @@ body{
   }
 
   .chat-container{
-    padding:12px;
+    padding:12px;  
   }
 
   .message{
     max-width:92%;
   }
+  .input-wrapper input{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:var(--text);
+    font-size:16px;
+}
 }
